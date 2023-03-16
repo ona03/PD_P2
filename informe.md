@@ -66,7 +66,7 @@ I por último el `void loop()` formado por dos condicionales if:
 
 ### Diagrama de flujo
 
-<div class="mermaid">
+```mermaid
 
 flowchart TD;
     A[Asignación de los pines] -->B[Declara las funciones de interrupción];    
@@ -76,12 +76,9 @@ flowchart TD;
     I-->J[Comprueba el timer];
     J-->K[timer < 60000 ms]-->I;
     J-->L[timer >= 60000ms];
-    L-->M[Muestra por pantalla INTERRUPT DETACHED!];
+    L-->M[Imprimir por pantalla INTERRUPT DETACHED!];
     M-->N[Finaliza programa];
-    
-    
-  </div>
-
+```
 
 ## B: interrupción por timer
 
