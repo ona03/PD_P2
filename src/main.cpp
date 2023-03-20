@@ -1,3 +1,4 @@
+//Semaphore Mutex
 #include <Arduino.h>
 
 volatile int interruptCounter;
@@ -10,11 +11,9 @@ void IRAM_ATTR onTimer() {
   portENTER_CRITICAL_ISR(&timerMux);
   interruptCounter++;
   portEXIT_CRITICAL_ISR(&timerMux);
- 
 }
  
 void setup() {
- 
   Serial.begin(115200);
  
   timer = timerBegin(0, 80, true);

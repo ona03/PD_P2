@@ -12,7 +12,6 @@ El código de esta primera parte es el siguiente:
 </div>
 
 ```
-
 struct Button {
   const uint8_t PIN;
   uint32_t numberKeyPresses;
@@ -48,7 +47,6 @@ void IRAM_ATTR isr() {
   button1.numberKeyPresses += 1;
   button1.pressed = true;
 }
-
 ```
 
 <div align="justify">
@@ -68,11 +66,8 @@ I por último el `void loop()` formado por dos condicionales if:
 
 ```mermaid
 
-flowchart TD;
-    A[Asignación de los pines] -->B[Declara las funciones de interrupción];    
-    B-->G[Inicializa los valores del contador a 0];
-    G-->H[Empieza a contar];
-    H-->I[Si se pulsa el botón, se muestra por pantalla las veces pulsadas];
+flowchart TD;  
+    G[Inicializa los valores del contador a 0]-->I[Si se pulsa el botón, se muestra por pantalla las veces pulsadas];
     I-->J[Comprueba el timer];
     J-->K[timer < 60000 ms]-->I;
     J-->L[timer >= 60000ms];
