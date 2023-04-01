@@ -60,6 +60,16 @@ A continuación, nos encontramos con el `void setup()` donde se declara la veloc
 I por último el `void loop()` formado por dos condicionales if:
 * El primero se dedica a mostrar por pantalla, las veces que ha sido pulsado el botón i modifica el estado de pulsado a `false`.Este condicionante se ejecuta cada vez que se pulsa el botón. 
 * El segundo se encarga de parar el programa i mostrar por pantalla `Interrupt Detached!` una vez llegados los 600000 milisegundos.
+
+La salida de este código es el siguiente:
+```cpp
+Button 1 has been pressed 1 times
+Button 1 has been pressed 2 times
+Button 1 has been pressed 3 times
+...
+Button 1 has been pressed 'x' times
+Interrupt Detached!
+```
 </div>
 
 ### Diagrama de flujo
@@ -169,6 +179,16 @@ void IRAM_ATTR onTimer() {
   interruptCounter++;
   portEXIT_CRITICAL_ISR(&timerMux);
 }
+```
+Con la salida siguiente:
+
+```cpp
+An interrupt as occurred. Total number: 1
+An interrupt as occurred. Total number: 2
+An interrupt as occurred. Total number: 3
+An interrupt as occurred. Total number: 4
+An interrupt as occurred. Total number: 5
+...
 ```
 
 </div>
